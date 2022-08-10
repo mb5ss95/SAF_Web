@@ -9,3 +9,4 @@ console.log(numbers);
 
 console.log(result);
 // [1, 4, 9, 16, 25]
+
