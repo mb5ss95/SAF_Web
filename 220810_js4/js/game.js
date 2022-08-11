@@ -37,7 +37,6 @@ class info{
         this.datas.sort((a, b) => {
             return a.id - b.id;
         });
-        console.log(this.datas);
     }
 
     get_ranIndex(){
@@ -49,6 +48,10 @@ class info{
             if(temp.length == 18) break;
         };
         return temp;
+    }
+
+    get_data(){
+        console.log(this.datas);
     }
 }
 
@@ -142,4 +145,4 @@ class active extends info{
 }
 
 
-test = new active();
+moon = new active();
