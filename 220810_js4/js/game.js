@@ -119,6 +119,10 @@ class active extends info{
             if(nowName === this.preName){
                 this.rst = this.rst - 1;
                 this.rest.textContent = this.rst;
+                this.datas[nowId].done = true; 
+                this.datas[this.preId].done = true; 
+                this.datas[nowId].check = false; 
+                this.datas[this.preId].check = false; 
             }
             else{
                 this.flip_card(this.preId)

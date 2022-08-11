@@ -6,26 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-		/* 이곳에 코드를 작성합니다. */
-        header{
-            color:red;
-        }
-        section{
-            color:red;
-        }
-        footer{
-            color:red;
-        }
+    .outer-box {
+      border: black 1px dotted ;
+      height: 200px;
+      width: 600px;
+    }
+
+    .inner-box {
+      display: flex;
+      justify-content: space-between;
+      border: red 1px solid;
+      height: 200px;
+      width: 300px;
+    }
+
+    .box {
+      height: 100px;
+      width: 100px;
+      background-color: skyblue;
+    }
   </style>
 </head>
 <body>
-  <header>header</header>
-  <section>section</section>
-  <div>div</div>
-  <h1>h1</h1>
-  <footer>footer</footer>
-  <a href="#">a</a>
-  <form>form</form>
-  <span>span</span>
+  <div class="outer-box">
+    <div class="inner-box">
+      <div class="box">item1</div>
+      <div class="box">item2</div>
+    </div>
+  </div>
 </body>
 </html>
