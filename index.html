@@ -6,33 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .outer-box {
-      border: black 1px dotted ;
-      height: 200px;
-      width: 600px;
-    }
-
-    .inner-box {
+		/* 이곳에 코드를 작성합니다.*/
+    .container {
       display: flex;
-      justify-content: space-between;
-      border: red 1px solid;
-      height: 200px;
-      width: 300px;
+      flex-direction: column-reverse;
     }
 
-    .box {
-      height: 100px;
-      width: 100px;
-      background-color: skyblue;
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      margin: 10px;
     }
+
   </style>
 </head>
 <body>
-  <div class="outer-box">
-    <div class="inner-box">
-      <div class="box">item1</div>
-      <div class="box">item2</div>
-    </div>
+  <div class="container">
+    <span class="item">1</span>
+    <span class="item">2</span>
+    <span class="item">3</span>
+    <span class="item">4</span>
   </div>
 </body>
 </html>
