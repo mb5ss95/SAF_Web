@@ -3,3 +3,5 @@ SPA
 
 props -> 부모에서 자식으로 데이터 전달
 emit -> 자식에서 부모 메서드 실행
+
+https://jsonplaceholder.typicode.com/
