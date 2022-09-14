@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { api } from "@/utility/axios";
+import { api } from "../../utility/axios";
 export default {
   data() {
     return {

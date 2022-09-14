@@ -30,7 +30,7 @@ const upload = multer({
 });
 
 
-app.get("/api/menus", async (req, res) => {
+app.get("/api/menu", async (req, res) => {
     try {
         const data = await pool.query("SELECT * FROM menus");
 
@@ -43,7 +43,7 @@ app.get("/api/menus", async (req, res) => {
     }
 });
 
-app.get("/api/menus/:id", async (req, res) => {
+app.get("/api/menu/:id", async (req, res) => {
     try {
         const data = await pool.query(`SELECT * FROM menus WHERE id = ${req.params.id}`);
         console.log(data[0]);
@@ -57,7 +57,7 @@ app.get("/api/menus/:id", async (req, res) => {
     }
 });
 
-app.post("/api/menus", upload.single("file"), async (req, res) => {
+app.post("/api/menu", upload.single("file"), async (req, res) => {
     try {
         console.log(req.file);
         console.log(req.file.path);
@@ -79,7 +79,7 @@ app.post("/api/menus", upload.single("file"), async (req, res) => {
     }
 });
 
-app.post("/api/menus/:id/image", upload.single("file"), async (req, res) => {
+app.post("/api/menu/:id/image", upload.single("file"), async (req, res) => {
     try {
         const data = await pool.query(`UPDATE menus SET image_src= ? where id= ?`, [
             req.file.path,
@@ -100,7 +100,7 @@ app.post("/api/menus/:id/image", upload.single("file"), async (req, res) => {
     }
 });
 
-app.patch("/api/menus/:id", async (req, res) => {
+app.patch("/api/menu/:id", async (req, res) => {
     try {
         console.log(req.params);
 
@@ -119,7 +119,7 @@ app.patch("/api/menus/:id", async (req, res) => {
     }
 });
 
-app.delete("/api/menus/:id", async (req, res) => {
+app.delete("/api/menu/:id", async (req, res) => {
     try {
         const data = await pool.query("DELETE FROM menus WHERE id =?",
             [req.params.id,]);
@@ -138,7 +138,7 @@ app.delete("/api/menus/:id", async (req, res) => {
     }
 });
 
-app.get("/api/orders", async (req, res) => {
+app.get("/api/order", async (req, res) => {
     try {
         const data = await pool.query(`SELECT a.id, quantity, request_detail, name, description
       FROM orders as a INNER JOIN menus as b ON a.menus_id = b.id ORDER BY a.id DESC`);
@@ -153,7 +153,7 @@ app.get("/api/orders", async (req, res) => {
     }
 });
 
-app.get("/api/orders/:id", async (req, res) => {
+app.get("/api/order/:id", async (req, res) => {
     try {
         const data = await pool.query(
             `SELECT a.id, quantity, request_detail, name, description FROM orders as a
@@ -169,7 +169,7 @@ app.get("/api/orders/:id", async (req, res) => {
     }
 });
 
-app.post("/api/orders", async (req, res) => {
+app.post("/api/order", async (req, res) => {
     try {
         const data = await pool.query(
             `INSERT INTO orders (quantity, request_detail, menus_id)
@@ -189,7 +189,7 @@ app.post("/api/orders", async (req, res) => {
     }
 });
 
-app.patch("/api/orders/:id", async (req, res) => {
+app.patch("/api/order/:id", async (req, res) => {
     try {
         const data = await pool.query(
             `UPDATE orders SET quantity = ?, request_detail = ?, menus_id = ? where id = ?`,
@@ -214,7 +214,7 @@ app.patch("/api/orders/:id", async (req, res) => {
     }
 });
 
-app.delete("/api/orders/:id", async (req, res) => {
+app.delete("/api/order/:id", async (req, res) => {
     try {
         const data = await pool.query(`DELETE FROM orders where id=?`, 
         [req.params.id,]);
