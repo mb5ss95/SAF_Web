@@ -43,10 +43,13 @@ export default {
       return `http://3.36.112.248:8080/${this.data.image_src}`;
     },
     moveRegister(){
+      this.$store.commit("SET_DATA", this.data);
       this.$router.push(`/admin/menus/register/${this.$route.params.id}`);
     },
     async deleteMenu(){
-      console.log("삭제")
+      await api.menus.delete(`${this.data.id}`);
+      alert(`"${this.data.name}"를 삭제 하였습니다.`)
+      this.$router.push("/admin/menus");
     },
     moveList(){
       this.$router.push("/admin/menus");

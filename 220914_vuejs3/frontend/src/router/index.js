@@ -12,7 +12,7 @@ import AdminMenuMain from "../views/admin-menu/Main.vue"
 import AdminMenuList from "../views/admin-menu/List.vue"
 import AdminMenuRegister from "../views/admin-menu/Register.vue"
 import AdminMenuDetail from "../views/admin-menu/Detail.vue"
-
+import AdminMenuUpdate from "../views/admin-menu/Update.vue"
 
 Vue.use(VueRouter)
 
@@ -63,7 +63,7 @@ const routes = [
   {
     path: "/admin/menus/register/:id",
     name: 'menus-update',
-    component: AdminMenuRegister
+    component: AdminMenuUpdate
   },
   {
     path: "/admin/menus/:id",
